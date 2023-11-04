@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   #Accion definida para cuando se pide la ruta root
   root to: "main#index"
 
-  #Accion definida para cuando se pide la ruta sign_up
+  #Acciones definida para cuando se pide la ruta sign_up, dependiendo el request (GET, POST)
   get "/sign_up", to: "registration#new"
+  post "/sign_up", to: "registration#create"
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
