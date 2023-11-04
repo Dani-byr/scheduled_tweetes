@@ -2,13 +2,13 @@
 
 <%= form_with model: @user, url: sign_up_path do |form| %> <%# form_with: helper; form: variable usada para definir los siguientes campos%>
 <%# con boostrap definimos clases para cada elemento que queremos agregar %>
-<% if @user.errors.any? %>
-    <div class="alert alert-danger">
-        <% @user.errors.full_messages.each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
-<% end %>
+    <% if @user.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+            <% @user.errors.full_messages.each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+        </div>
+    <% end %>
 
     <div class="mb-3"> <%# clase "tamano" %>
         <%= form.label :email %>
