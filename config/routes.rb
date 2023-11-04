@@ -10,10 +10,14 @@ Rails.application.routes.draw do
   root to: "main#index"
 
   #Acciones definida para cuando se pide la ruta sign_up, dependiendo el request (GET, POST)
+  #Tenemos un get para el form, y un post para el form submition
   get "sign_up", to: "registration#new"
   post "sign_up", to: "registration#create"
 
   delete "logout", to: "sessions#destroy"
+
+  get "sign_in", to: "sessions#new"
+  post "sign_in", to: "sessions#create"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
