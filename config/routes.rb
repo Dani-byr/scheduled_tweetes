@@ -6,10 +6,17 @@ Rails.application.routes.draw do
   get "/about", to: "about#index" #"controller#action"
   #Make sure you have defined your about controller 
 
+  #Accion definida para cuando se pide la ruta root
   root to: "main#index"
+
+  #Accion definida para cuando se pide la ruta sign_up
+  get "/sign_up", to: "registration#new"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
 end
+
+#resources :users, only: [:new, :create] #resources es un helper de rails para generar rutas automaticamente

@@ -1,0 +1,23 @@
+<h1>Sign Up</h1>
+
+<%= form_with model: @user, url: sign_up_path do |form| %> <%# form_with: helper; form: variable usada para definir los siguientes campos%>
+<%# con boostrap definimos clases para cada elemento que queremos agregar %>
+    <div class="mb-3"> <%# clase "tamano" %>
+        <%= form.label :email %>
+        <%= form.text_field :email, class: "form-control", placeholder: "chris@gorails.com" %> <%# defino el tipo que contendra el elemento y de que atributo del modelo lo saca, y le asignamos una clase form-control para darle la forma redondeada al campo %> 
+    </div> 
+
+    <div class="mb-3">
+        <%= form.label :password %>
+        <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "Submit", class: "btn btn-primary" %> <%# Sin el string, por default el texto del boton es "Crate 'model'" %>
+    </div>
+<% end %>
