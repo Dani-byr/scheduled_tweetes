@@ -3,16 +3,17 @@
 # dirigido el usuario en el production enviroment
 Rails.application.routes.draw do
   #GET /about o GET about
-  get "/about", to: "about#index" #"controller#action"
+  get "about", to: "about#index" #"controller#action"
   #Make sure you have defined your about controller 
 
   #Accion definida para cuando se pide la ruta root
   root to: "main#index"
 
   #Acciones definida para cuando se pide la ruta sign_up, dependiendo el request (GET, POST)
-  get "/sign_up", to: "registration#new"
-  post "/sign_up", to: "registration#create"
+  get "sign_up", to: "registration#new"
+  post "sign_up", to: "registration#create"
 
+  delete "logout", to: "sessions#destroy"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

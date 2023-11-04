@@ -7,10 +7,10 @@ class RegistrationController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            session[:user_id] = @user.id
+            #Se define una cookie para que el usuario sea loged in
+            session[:user_id] = @user.id #Cookie de sesion
             redirect_to root_path, notice: "Successfully created account"
         else
-            flash[:alert]
             render :new
         end
     end
