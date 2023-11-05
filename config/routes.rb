@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
 
+  get "password", to: "passwords#edit", as: "edit_password"
+  patch "password", to: "passwords#update"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
