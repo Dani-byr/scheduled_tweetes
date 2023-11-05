@@ -1,0 +1,13 @@
+<h1>Forgot your password?</h1>
+
+<%= form_with url: password_reset_path do |form| %>
+    <div class="mb-3"> <%# clase "tamano" %>
+        <%= form.label :email %>
+        <%= form.text_field :email, class: "form-control", placeholder: "chris@gorails.com" %> <%# defino el tipo que contendra el elemento y de que atributo del modelo lo saca, y le asignamos una clase form-control para darle la forma redondeada al campo %> 
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "Reset", class: "btn btn-primary" %> <%# Sin el string, por default el texto del boton es "Crate 'model'" %>
+    </div>
+
+<% end %>
